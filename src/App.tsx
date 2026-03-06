@@ -1,5 +1,4 @@
 import { Outlet } from 'react-router-dom';
-import { ProductsPage } from './pages/ProductsPage';
 import { Header } from './Header';
 
 export function App() {

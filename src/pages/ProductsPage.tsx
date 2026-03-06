@@ -8,7 +8,7 @@ export function ProductsPage() {
       <ul>
         <ul />
         {products.map((product) => (
-          <li key={product.id} className="p-1 text-base text-slate-800">
+          <li key={product.id} className="text-center p-1 text-base text-slate-800">
             <Link to={`/products/${product.id}`}>{product.name}</Link>
 
             {/* <h3 className="text-lg font-semibold">{product.name}</h3>

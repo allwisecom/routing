@@ -176,3 +176,30 @@ params.id
 params.taskid
 
 route parameters (id, taskid) defined in path property.
+
+useRouteError() // get the error object(status, status text, data) while user switching to the route which doesnt exist.
+
+Index path -> default page for child routes
+
+Search Parameters: Query Parameters
+
+how to spot search parameter in browser url
+
+https://www.example.com/?type=sometype&when=recent // search parameters object -> {type: sometype, when:recent}
+
+? indicates the first parameter -> type=sometype
+& for other parameters -> when=recent
+
+How do component access the search parameters -> useSearchParams()
+
+//tuple
+const [searchParams, setSearchParams] = useSearchParams();
+
+searchParams --> {type: sometype, when:recent}
+searchParams.get('type') //sometype
+
+setSearchParams ({type: 'sometype', when:'recent'})
+
+search paramters also known as query paramaters..
+
+Router parameters -> matches with router tree -> useParams()

@@ -17,7 +17,7 @@ export function ProductPage() {
       {product === undefined ? (
         <p>Product not found</p>
       ) : (
-        <div>
+        <div className="text-center">
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <p>Price: ${product.price.toFixed(2)}</p>
