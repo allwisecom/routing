@@ -4,6 +4,9 @@ import { App } from './App';
 import { ProductPage } from './pages/ProductPage';
 import { ErrorPage } from './pages/error';
 import { HomePage } from './pages/HomePage';
+import { lazy, Suspense } from 'react';
+
+const AdminPage = lazy(() => import('./pages/AdminPage')); //lazy loading the AdminPage component. It will only be loaded when the user navigates to the /admin route. This helps improve the initial load time of the application by splitting the code into smaller chunks and loading them on demand.
 
 const myRouterTree = createBrowserRouter([
   {
@@ -26,6 +29,14 @@ const myRouterTree = createBrowserRouter([
       {
         path: 'products/:productId',
         element: <ProductPage />,
+      },
+      {
+        path: 'admin',
+        element: (
+          <Suspense fallback={<div className="text-center top-40 p-5">Loading...</div>}>
+            <AdminPage />
+          </Suspense>
+        ),
       },
       //this is wildcard route that matches any path that doesn't match the above routes. It serves as a catch-all for undefined routes, allowing you to display a custom "Not Found" message or component when users navigate to a non-existent page.
       //   {
